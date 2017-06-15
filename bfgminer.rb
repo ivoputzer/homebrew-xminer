@@ -17,6 +17,7 @@ class Bfgminer < Formula
   depends_on "libevent"
   depends_on "libusb"
   depends_on "hidapi"
+  depends_on "yasm"
 
   def install
     system "NOSUBMODULES=1 ./autogen.sh"
@@ -26,6 +27,7 @@ class Bfgminer < Formula
       "--prefix=#{prefix}",
       "PKG_CONFIG_PATH=#{HOMEBREW_PREFIX}/opt/curl/lib/pkgconfig:#{HOMEBREW_PREFIX}/opt/jansson/lib/pkgconfig:#{HOMEBREW_PREFIX}/opt/libmicrohttpd/lib/pkgconfig:#{HOMEBREW_PREFIX}/opt/libusb/lib/pkgconfig:#{HOMEBREW_PREFIX}/opt/hidapi/lib/pkgconfig:#{HOMEBREW_PREFIX}/opt/libevent/lib/pkgconfig",
       "--enable-scrypt",
+      "--enable-cpumining",
       "--enable-keccak",
       "--enable-opencl"
     system "make", "install"
