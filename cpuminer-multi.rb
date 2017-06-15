@@ -8,16 +8,16 @@ class CpuminerMulti < Formula
 
   depends_on "automake" => :build
   depends_on "autoconf" => :build
-  # depends_on "pkg-config" => :build
-  # depends_on "openssl" => :build
-  # depends_on "curl" => :build
+  depends_on "pkg-config" => :build
+  depends_on "openssl" => :build
+  depends_on "curl" => :build
   depends_on "libtool" => :build
   depends_on "jansson"
 
   def install
     system "./autogen.sh"
     system "perl nomacro.pl"
-    system "./configure CFLAGS=\"-march=native\" US_CPPFLAGS=\"-03\""
+    system "./configure CFLAGS=\"-march=native\" US_CPPFLAGS=\"-03\" --with-curl"
     system "make"
     bin.install "cpuminer"
   end
