@@ -11,7 +11,6 @@ class CpuminerMulti < Formula
   depends_on "openssl" => :build
   depends_on "curl" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config"
   depends_on "jansson"
 
   def install
