@@ -17,7 +17,7 @@ class Bfgminer < Formula
   depends_on "libevent"
   depends_on "libusb"
   depends_on "hidapi"
-  depends_on "yasm"
+  # depends_on "yasm"
 
   def install
     system "NOSUBMODULES=1 ./autogen.sh"
