@@ -14,7 +14,7 @@ class CpuminerMulti < Formula
   def install
     system "./autogen.sh"
     system "perl nomacro.pl"
-    system "./configure CFLAGS=\"-march=native\"" # US_CPPFLAGS= \"-03\""
+    system "./configure CFLAGS=\"-march=native\" US_CPPFLAGS= \"-03\""
     system "make"
     bin.install "cpuminer"
   end
