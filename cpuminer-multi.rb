@@ -7,7 +7,7 @@ class CpuminerMulti < Formula
   depends_on "automake" => :build
   depends_on "autoconf" => :build
   depends_on "libtool" => :build
-  depends_on 'curl'
+  depends_on "openssl"
   depends_on "jansson"
 
   def install
