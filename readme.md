@@ -3,7 +3,8 @@ crypto currency mining toolkit.
 
 ### install
 ```shell
-brew tap ivoputzer/bitcoin
+brew tap ivoputzer/xminer
 
-brew install bfgminer
+brew install minderd
+brew install cpuminer
 ```
